@@ -1,6 +1,6 @@
-# CodeInsight - Python Code Summarization for VS Code
+<img src="code%20insight.png" alt="logo" width="100"/>
 
-![CodeInsight Logo](link-to-logo.png)
+# CodeInsight - Python Code Summarization for VS Code
 
 CodeInsight is a powerful tool designed for Python developers using Visual Studio Code (VS Code). It enables you to generate concise and insightful code summaries for Python functions and methods, right within your favorite code editor.
 
