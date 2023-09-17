@@ -15,13 +15,13 @@ def llama_cpp_model(model_path: str):
 
 
 def test_llama_cpp_with_langchain(llama_cpp_model: LlamaCpp):
-    # Example: Generate a code summary using LlamaCpp and Langchain
+    # Example: Generate a code completion using LlamaCpp and Langchain
     input_code = """
     def greet(name):
     """
 
-    # Use LlamaCpp to generate a code summary
-    code_summary = llama_cpp_model.predict(input_code)
+    # Use LlamaCpp to generate the code
+    code = llama_cpp_model.predict(input_code)
 
     # Assert that the code summary is not empty or None
-    assert code_summary is not None and code_summary.strip() != ""
+    assert code is not None and code.strip() != ""
