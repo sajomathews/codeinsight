@@ -29,7 +29,7 @@ We value your feedback! If you encounter issues, have suggestions, or want to co
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
