@@ -6,26 +6,29 @@ CodeInsight is a powerful tool designed for Python developers using Visual Studi
 
 ## Features
 
-- **Automated Code Summarization:** Leverage the Langchain Large Language Model (LLM) framework to generate clear and concise code summaries.
-- **Seamless VS Code Integration:** The CodeInsight extension seamlessly integrates into your VS Code environment, providing quick access to code summaries.
-- **User-Friendly UI:** Intuitive user interface elements make it easy to access and understand code summaries.
-- **Developer-Focused:** Tailored for Python developers working within the VS Code ecosystem.
+- **Automated Code Summarization:** Leverage the Langchain Large Language Model (LLM) framework to generate clear and concise code summaries (WIP). Currently a CLI application is being build to provide this feature. 
+- **Seamless VS Code Integration:** The CodeInsight extension seamlessly integrates into your VS Code environment, providing quick access to code summaries (TODO).
+- **User-Friendly UI:** Intuitive user interface elements make it easy to access and understand code summaries (TODO).
+- **Developer-Focused:** Tailored for Python developers working within the VS Code ecosystem (WIP).
 
 ## Getting Started
 
+Currently, the only way to obtain this software is to manually install it from github. 
+This is a work in progress and there are not releases so far. 
+
 To start using CodeInsight's code summarization feature, follow these steps:
 
-1. [Install the CodeInsight extension for Visual Studio Code](installation-instructions.md).
-2. Open your Python project in VS Code.
-3. Hover over or click on a Python function or method to view its code summary.
+1. Checkout the repository `git clone https://github.com/sajomathews/codeinsight.git`
+2. Install the project using poetry `poetry install`
+3. Run the CLI `poetry run codeinsight --help`
 
 ## Documentation
 
-Explore the [documentation](link-to-docs) for detailed instructions, tutorials, and additional resources to make the most of CodeInsight.
+Explore the [documentation](link-to-docs) for detailed instructions, tutorials, and additional resources to make the most of CodeInsight. (TODO)
 
 ## Feedback and Contributions
 
-We value your feedback! If you encounter issues, have suggestions, or want to contribute, please [open an issue](link-to-issues) or [submit a pull request](link-to-pull-requests).
+We value your feedback! If you encounter issues, have suggestions, or want to contribute, please open an issue or submit a pull request.
 
 ### Development Environment Setup
 
