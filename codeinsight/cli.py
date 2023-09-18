@@ -25,7 +25,7 @@ from pathlib import Path
 
 import typer
 
-from codeinsight import summarizer
+from codeinsight.summarizers.file_list import FileListSummarizer
 
 app = typer.Typer()
 
@@ -42,12 +42,13 @@ def summarize(
     """Summarize code in the given directory."""
     # Ensure the output directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
+    summarizer = FileListSummarizer()
 
     # List all files in the input directory
     summaries = summarizer.summarize(input_dir)
-    for s, data in summaries.items():
-        summary_file = output_dir / s
+    for summary in summaries:
+        summary_file = output_dir / summary.path
         with summary_file.open("w") as f:
-            f.write(data)
+            f.write(summary.data)
 
     typer.echo(f"Summaries saved in {output_dir}")
