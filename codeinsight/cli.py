@@ -7,7 +7,9 @@ app = typer.Typer()
 
 @app.command()
 def summarize(
-    input_dir: Path = typer.Argument(help="The directory containing code files."),
+    input_dir: Path = typer.Argument(
+        help="The directory containing code files.", exists=True, file_okay=False
+    ),
     output_dir: Path = typer.Option(
         help="The directory to save summaries", default=Path("docs")
     ),
