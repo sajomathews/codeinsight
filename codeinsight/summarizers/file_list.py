@@ -13,6 +13,7 @@ Classes:
 """
 
 from pathlib import Path
+import os
 
 from codeinsight.interfaces.summarizer import Summary
 
@@ -38,6 +39,16 @@ class FileListSummarizer:
         :return: A Summary object containing the overall code summary.
         :rtype: Summary
         """
+        # Validate input
+        if not input_dir.exists():
+            raise FileNotFoundError()
+
+        if not input_dir.is_dir():
+            raise NotADirectoryError()
+
+        if not os.access(str(input_dir), os.R_OK):
+            raise PermissionError("Input directory is not readable")
+
         # List all Python files in the input directory recursively
         code_files = [str(f) for f in input_dir.rglob("*.py")]
 
