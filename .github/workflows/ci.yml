@@ -1,0 +1,39 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - '*'  # Run on all branches
+  pull_request:
+    branches:
+      - 'main'  # Run on all branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"  # Specify the Python version you need
+
+    - name: Set up Poetry
+      uses: Gr1N/setup-poetry@v8
+
+    - name: Cache Dependencies
+      uses: actions/cache@v2
+      with: 
+        path: ~/.cache/pypoetry/virtualenvs
+        key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+
+    - name: Install dependencies
+      run: |
+        poetry install
+
+    - name: Run pytest
+      run: |
+        poetry run pytest
