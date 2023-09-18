@@ -1,10 +1,11 @@
-import pytest
 from pathlib import Path
+
+import pytest
+
 from codeinsight.interfaces.summarizer import Summary
 from codeinsight.summarizers.file_list import (
     FileListSummarizer,
 )
-import os
 
 
 # Define a fixture to create a temporary directory for testing
@@ -72,15 +73,15 @@ def test_non_directory_input(temp_directory):
 
 
 # Test case for a non-readable input directory
-def test_non_readable_input_directory(temp_directory):
+def test_non_readable_input_directory(temp_directory: Path):
     summarizer = FileListSummarizer()
     input_dir = temp_directory / "non_readable_directory"
     input_dir.mkdir()
 
     # Set no permissions on the directory
-    os.chmod(input_dir, 0o000)  # Make the directory not readable
+    input_dir.chmod(0o000)
 
     with pytest.raises(PermissionError):
         summarizer.summarize(input_dir)  # Should raise PermissionError
 
-    os.rmdir(input_dir)
+    input_dir.rmdir()

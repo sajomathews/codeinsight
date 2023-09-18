@@ -12,8 +12,8 @@ Classes:
 
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 from codeinsight.interfaces.summarizer import Summary
 
