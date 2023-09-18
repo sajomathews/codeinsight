@@ -1,8 +1,10 @@
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
 import pytest
 from typer.testing import CliRunner
+
 from codeinsight.cli import app  # Import the command function from your script
-from tempfile import TemporaryDirectory
-from pathlib import Path
 
 
 @pytest.fixture
