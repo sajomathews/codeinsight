@@ -14,6 +14,9 @@ def llama_cpp_model(model_path: str):
     return LlamaCpp(model_path=model_path)
 
 
+@pytest.mark.skip(
+    reason="This test is skipped because it requires a the model to be available"
+)
 def test_llama_cpp_with_langchain(llama_cpp_model: LlamaCpp):
     # Example: Generate a code completion using LlamaCpp and Langchain
     input_code = """
